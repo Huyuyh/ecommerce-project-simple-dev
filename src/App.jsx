@@ -4,10 +4,10 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/home/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { OrdersPage } from './pages/OrdersPage';
-import { TrackingPage } from './pages/TrackingPage';
+import { OrdersPage } from './pages/order/OrdersPage';
+import { TrackingPage } from './pages/tracking/TrackingPage';
 
 function App() {
   const [cart, setCart] = useState([]);
