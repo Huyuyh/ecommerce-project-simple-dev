@@ -4,7 +4,7 @@ import { CheckoutGrid } from './CheckoutGrid';
 import './CheckoutPage.css';
 import { CheckoutPageHeader } from './CheckoutPageHeader';
 
-export function CheckoutPage({ cart }) {
+export function CheckoutPage({ cart, loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
@@ -28,7 +28,7 @@ export function CheckoutPage({ cart }) {
     };
 
     getCheckoutData();
-  }, []);
+  }, [cart]);
 
   return (
     <>
@@ -38,7 +38,12 @@ export function CheckoutPage({ cart }) {
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
 
-        <CheckoutGrid deliveryOptions={deliveryOptions} cart={cart} paymentSummary={paymentSummary} />
+        <CheckoutGrid
+          deliveryOptions={deliveryOptions}
+          cart={cart}
+          paymentSummary={paymentSummary}
+          loadCart={loadCart}
+        />
       </div>
     </>
   );
